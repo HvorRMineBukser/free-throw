@@ -29,17 +29,17 @@ function createEnemies () {
     for (let value of scene.getTilesByType(2)) {
         let gravity: Sprite = null
         mySprite3 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . d d d d d d . . . . . 
+            . . . . . . 4 4 4 4 . . . . . . 
+            . . . . . 4 4 4 4 4 4 . . . . . 
+            . . . . 4 4 4 4 4 4 4 4 . . . . 
+            . . . 4 4 4 4 4 4 4 4 4 4 . . . 
+            . . 4 f f 4 4 4 4 4 4 f f 4 . . 
+            . 4 4 4 d f 4 4 4 4 f d 4 4 4 . 
+            . 4 4 4 d f f f f f f d 4 4 4 . 
+            4 4 4 4 d f d 4 4 d f d 4 4 4 4 
+            4 4 4 4 d d d 4 4 d d d 4 4 4 4 
+            4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+            . 4 4 4 4 d d d d d d 4 4 4 4 . 
             . . . . d d d d d d d d . . . . 
             . . f f d d d d d d d d f f . . 
             . f f f f f d d d d f f f f f . 
