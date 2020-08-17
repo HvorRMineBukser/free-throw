@@ -50,7 +50,7 @@ function createEnemies () {
         if (Math.percentChance(50)) {
             mySprite.vx = randint(30, 60)
         } else {
-        	
+            mySprite.vx = randint(-60, -30)
         }
     }
 }
