@@ -2,6 +2,44 @@ namespace SpriteKind {
     export const Hoop = SpriteKind.create()
     export const Bumper = SpriteKind.create()
 }
+function introduction () {
+    game.setDialogFrame(img`
+        . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+        2 2 1 1 1 1 1 1 1 1 1 1 2 2 . 
+        2 1 1 2 2 2 2 2 2 2 2 1 1 2 . 
+        2 1 2 2 1 1 1 1 1 1 2 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 1 1 1 1 1 1 1 1 2 1 2 . 
+        2 1 2 2 1 1 1 1 1 1 2 2 1 2 . 
+        2 1 1 2 2 2 2 2 2 2 2 1 1 2 . 
+        2 2 1 1 1 1 1 1 1 1 1 1 2 2 . 
+        . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+        . . . . . . . . . . . . . . . 
+        `)
+    game.setDialogCursor(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f 5 5 5 5 f f . . . . 
+        . . . . f 5 5 5 5 5 5 f . . . . 
+        . . . f 5 5 5 4 4 5 5 5 f . . . 
+        . . . f 5 5 5 4 4 5 5 5 f . . . 
+        . . . f 5 5 5 4 4 5 5 5 f . . . 
+        . . . f 5 5 5 4 4 5 5 5 f . . . 
+        . . . . f 5 5 5 5 5 5 f . . . . 
+        . . . . f f 5 5 5 5 f f . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+    game.splash("this game is about to run and shoot the cat", "good luck with that")
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite2 = sprites.createProjectileFromSprite(img`
         . . . . . . f f . . . . . . 
@@ -197,6 +235,7 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.setPosition(82, 111)
 mySprite.setFlag(SpriteFlag.BounceOnWall, true)
+introduction()
 mySprite2 = sprites.create(img`
     e e e . . . . e e e . . . . 
     c d d c . . c d d c . . . . 
