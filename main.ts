@@ -63,6 +63,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Hoop, function (sprite, otherSprite) {
     game.over(true)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Hoop, function (sprite, otherSprite) {
+    introduction2()
+})
+function introduction2 () {
+    game.over(false)
+    pause(1000)
+    game.splash("ohh sory man you lose try igen", "and have good luck")
+}
 function createEnemies () {
     for (let value of scene.getTilesByType(2)) {
         let gravity: Sprite = null
