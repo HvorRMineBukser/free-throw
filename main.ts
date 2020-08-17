@@ -20,7 +20,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f f f . . . . . 
         . . . . . f f f f . . . . . 
         . . . . . f f f f . . . . . 
-        `, mySprite, 50, -100)
+        `, mySprite, 0, -50)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Hoop, function (sprite, otherSprite) {
     game.over(true)
@@ -29,22 +29,22 @@ function createEnemies () {
     for (let value of scene.getTilesByType(2)) {
         let gravity: Sprite = null
         mySprite3 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . . . 4 4 . . . . . . . 
+            . . . . 4 4 4 4 4 4 4 4 . . . . 
+            . . 4 4 4 . . . 4 4 4 4 4 4 . . 
+            . 4 4 . . . . . . . 4 4 4 4 4 . 
+            4 4 . . . . . . . . . . 4 4 4 4 
+            4 . . . . . . . . . . . . . 4 4 
+            4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+            d d d d d d d 4 4 d d d d d d d 
+            d d d d d d d d d d d d d d d d 
+            . d d d d d d d d d d d d d d . 
+            . d d d d d d d d d d d d d d . 
+            . . d d d d d d d d d d d d . . 
+            . . f f f d d d d d d f f f . . 
+            f f f f f f d d d d f f f f f f 
+            f f f f f f . . . . f f f f f f 
+            . f f f f . . . . . . f f f f . 
             `, SpriteKind.Bumper)
         scene.place(value, gravity)
         if (Math.percentChance(50)) {
@@ -215,7 +215,7 @@ mySprite2 = sprites.create(img`
     `, SpriteKind.Hoop)
 mySprite2.setPosition(75, 8)
 controller.moveSprite(mySprite, 100, 100)
-mySprite2.follow(mySprite)
+mySprite2.follow(mySprite, 30)
 let levelMaps = [img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
