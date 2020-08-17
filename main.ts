@@ -67,7 +67,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Hoop, function (sprite, otherSpr
     introduction2()
 })
 function introduction2 () {
-    game.over(false)
+    game.over(false, effects.dissolve)
     pause(1000)
     game.splash("ohh sory man you lose try igen", "and have good luck")
 }
